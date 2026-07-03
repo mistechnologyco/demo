@@ -140,9 +140,10 @@
 
         .grid-options {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
             align-items: stretch;
+            width: 100%;
         }
 
         /* Option Card */
@@ -204,6 +205,43 @@
         .badge-pink {
             background-color: rgba(251, 203, 201, 0.3);
             color: #8c4b49;
+        }
+
+        .card-dark-gold {
+            background-color: #0f1015 !important;
+            border-color: rgba(197, 168, 128, 0.15) !important;
+            color: #f5f6f8;
+        }
+        .card-dark-gold::before {
+            background-color: #c5a880;
+        }
+        .card-dark-gold .option-desc {
+            color: #9fa2b2;
+        }
+        .card-dark-gold .feature-list li {
+            color: #9fa2b2;
+        }
+        .badge-dark-gold {
+            background-color: rgba(197, 168, 128, 0.15);
+            color: #c5a880;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+        }
+        
+        .card-kyoto {
+            background-color: #fcfbfa !important;
+            border: 2px solid #1a1a1a !important;
+            box-shadow: 4px 4px 0px #1a1a1a;
+            border-radius: 8px !important;
+        }
+        .card-kyoto::before {
+            background-color: #e76f51;
+            height: 6px;
+        }
+        .badge-kyoto {
+            background-color: rgba(231, 111, 81, 0.1);
+            color: #e76f51;
+            border: 1px solid #1a1a1a;
+            border-radius: 4px;
         }
 
         .option-title {
@@ -397,6 +435,46 @@
                     
                     <a href="kahve-firmasi-demo-alt/index.html" class="btn-go">
                         2. Seçeneği İncele <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Option 3 Card -->
+                <div class="option-card card-dark-gold">
+                    <div>
+                        <span class="option-badge badge-dark-gold">Seçenek 3</span>
+                        <h2 class="option-title">Luxury Glassmorphism</h2>
+                        <p class="option-desc">Gece yarısı lüks bar konseptli siyah fon, parıldayan neon kenarlıklar ve ultra premium animasyonlarla süslenmiş görkemli gurme deneyimi.</p>
+                        
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-square-check"></i> Karanlık mesh arka plan ve şık detaylar</li>
+                            <li><i class="fa-solid fa-square-check"></i> Hover'da parlayan cam kart etkileşimleri</li>
+                            <li><i class="fa-solid fa-square-check"></i> Mavi ve Pembe arası dinamik geçişli temalar</li>
+                            <li><i class="fa-solid fa-square-check"></i> Üst düzey Montserrat & Playfair Display fontu</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="kahve-firmasi-demo-3/index.html" class="btn-go">
+                        3. Seçeneği İncele <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Option 4 Card -->
+                <div class="option-card card-kyoto">
+                    <div>
+                        <span class="option-badge badge-kyoto">Seçenek 4</span>
+                        <h2 class="option-title">Kyoto Bauhaus</h2>
+                        <p class="option-desc">Terracotta & Sage toprak tonları, kalın siyah çerçeveler ve sürekli dönen logo amblemleri içeren retro-asimetrik Japon tasarım dili.</p>
+                        
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-square-check"></i> Terracotta ve Adaçayı Yeşili retro teması</li>
+                            <li><i class="fa-solid fa-square-check"></i> Sürekli dönen dairesel maskot mühürleri</li>
+                            <li><i class="fa-solid fa-square-check"></i> Bauhaus asimetrisi ve kalın dış konturlar</li>
+                            <li><i class="fa-solid fa-square-check"></i> Syne bold yazı tipi ile güçlü tipografi</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="kahve-firmasi-demo-4/index.html" class="btn-go">
+                        4. Seçeneği İncele <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
 

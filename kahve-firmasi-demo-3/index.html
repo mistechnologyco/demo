@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holly Coffee Roastery | Premium Split-Screen Storefront</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png?v=3">
+    <link rel="shortcut icon" type="image/png" href="favicon.png?v=3">
+</head>
+<body class="theme-blue">
+    <!-- Master Storefront Wrapper -->
+    <div id="storefront-wrapper">
+        <!-- Floating Glass Header -->
+        <header class="main-header">
+            <div class="header-container">
+                <!-- Brand logo area -->
+                <div class="header-brand">
+                    <img src="logo.png" alt="Holly Mascot" class="header-mascot">
+                    <a href="#" class="header-title" onclick="event.preventDefault();">holly <span>COFFEE</span></a>
+                </div>
+
+                <!-- Main Navigation Links -->
+                <nav class="main-nav">
+                    <a href="#hikayemiz" class="nav-link">Hikayemiz</a>
+                    <a href="#kahveler" class="nav-link">Kahvelerimiz</a>
+                    <a href="#quiz-sec" class="nav-link">Kahve Bulucu</a>
+                    <a href="#iletisim" class="nav-link">Bize Ulaşın</a>
+                </nav>
+
+                <!-- Actions (User & Cart) -->
+                <div class="header-actions">
+                    <!-- Elegant theme switch -->
+                    <button class="action-trigger-btn" id="theme-toggle-btn" title="Tema Değiştir">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </button>
+
+                    <!-- Customer Account Dropdown Menu -->
+                    <div class="user-menu-container">
+                        <button class="action-trigger-btn" id="user-portal-btn" title="Müşteri Portalı">
+                            <i class="fa-regular fa-user"></i>
+                            <span id="user-display-name">Profil</span>
+                        </button>
+                        <!-- Dropdown menu content -->
+                        <div class="user-dropdown" id="user-dropdown-menu" style="display: none;">
+                            <div class="dropdown-header">Müşteri Portalı</div>
+                            <button class="dropdown-item" id="user-orders-btn"><i class="fa-solid fa-box"></i> Siparişlerim</button>
+                            <button class="dropdown-item" id="user-logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Çıkış</button>
+                        </div>
+                    </div>
+
+                    <!-- Cart Bag Trigger -->
+                    <button class="action-trigger-btn cart-badge-pill" id="cart-open-btn" title="Alışveriş Sepeti">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Modern Split-Screen Hero Section -->
+        <section class="hero-section">
+            <div class="hero-split-container">
+                <!-- Left half: Rich Typography -->
+                <div class="hero-text-pane">
+                    <div class="hero-text-content">
+                        <span class="hero-tagline">BOUTIQUE & ARTISAN ROASTERY</span>
+                        <h1 class="hero-title">Her Yudumda <em>Sade</em> Bir Sanat</h1>
+                        <p class="hero-desc">Özenle kavrulmuş nitelikli çekirdekleri, modern ve minimalist bir şıklıkla fincanınıza taşıyoruz. Holly Coffee ile kahvenin gerçek tadını keşfedin.</p>
+                        <div class="hero-buttons">
+                            <a href="#kahveler" class="btn btn-primary">Koleksiyonu İncele <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#quiz-sec" class="btn btn-secondary">Coffee Finder <i class="fa-solid fa-compass"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right half: Visual mascot showcase with clean overlay -->
+                <div class="hero-image-pane">
+                    <div class="mascot-showcase-box">
+                        <div class="mascot-decorator-line"></div>
+                        <img src="logo.png" alt="Holly Mascot" class="brand-illustration-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Heritage Story Section -->
+        <section class="story-section" id="hikayemiz">
+            <div class="story-container container">
+                <div class="story-grid">
+                    <div class="story-content-block">
+                        <span class="story-pretitle">KÖKLERİMİZ</span>
+                        <h2 class="story-title">Ankara'da Filizlenen Gurme Aşkı</h2>
+                        <div class="editorial-divider"></div>
+                        <p class="story-desc">Ankara'nın huzurlu Bağış Sokak No:15 adresinde yer alan butik kavurmahanemizde, her kökenden çekirdeği kendine has bir özenle kavuruyoruz.</p>
+                        <p class="story-desc">Amacımız çekirdeklerin içindeki en saf aromaları, meyvemsi notaları ve çikolata tatlarını kusursuz bir dengeyle hissettirmektir.</p>
+                    </div>
+                    <div class="story-graphics">
+                        <div class="typographic-stamp-box">
+                            <span class="stamp-title">EST. 2026</span>
+                            <h4>HOLLY COFFEE</h4>
+                            <p>Ankara, TR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Catalog -->
+        <section class="shop-section" id="kahveler">
+            <div class="shop-container container">
+                <div class="shop-header">
+                    <h2 class="section-title">Exclusive Seçki</h2>
+                    <!-- Category switches styled as tactile switches -->
+                    <div class="shop-filters">
+                        <button class="filter-btn active" data-category="all">Tümü</button>
+                        <button class="filter-btn" data-category="espresso">Espresso</button>
+                        <button class="filter-btn" data-category="filtre">Filtre</button>
+                        <button class="filter-btn" data-category="ekipman">Ekipman</button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="storefront-products-grid">
+                    <!-- Dynamic products rendered here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Coffee preference finder quiz -->
+        <section class="quiz-section" id="quiz-sec">
+            <div class="quiz-container container">
+                <div class="quiz-card">
+                    <div class="quiz-header">
+                        <span class="quiz-badge">KİŞİSEL TERCİH REHBERİ</span>
+                        <h2>Coffee Finder</h2>
+                        <p>Zevklerinize göre en ideal kahve çekirdeğini anında bulun.</p>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div class="quiz-step active" id="quiz-step-1" data-step="1">
+                        <h3>1. Kahvenizi nasıl demlemeyi tercih edersiniz?</h3>
+                        <div class="quiz-options-grid">
+                            <button class="quiz-opt-btn" data-value="espresso">
+                                <i class="fa-solid fa-mug-hot"></i>
+                                <span>Espresso & Basınçlı</span>
+                            </button>
+                            <button class="quiz-opt-btn" data-value="filtre">
+                                <i class="fa-solid fa-filter"></i>
+                                <span>Filtre & V60 / Damlama</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="quiz-step" id="quiz-step-2" data-step="2">
+                        <h3>2. Damak tadınızda hangi aromalar ön plandadır?</h3>
+                        <div class="quiz-options-grid">
+                            <button class="quiz-opt-btn" data-value="meyve">
+                                <i class="fa-solid fa-lemon"></i>
+                                <span>Meyvemsi & Çiçeksi Notalar</span>
+                            </button>
+                            <button class="quiz-opt-btn" data-value="cikolata">
+                                <i class="fa-solid fa-cookie"></i>
+                                <span>Çikolata, Fındık & Karamel</span>
+                            </button>
+                            <button class="quiz-opt-btn" data-value="dengeli">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                                <span>Dengeli & Klasik Tatlar</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 (Recommendations results) -->
+                    <div class="quiz-step-result" id="quiz-result">
+                        <div class="result-celebration">
+                            <i class="fa-solid fa-award"></i>
+                            <h3>Eşleşme Bulundu!</h3>
+                            <p>Damak tadınıza en uygun özel çekirdeğimiz:</p>
+                        </div>
+                        <div id="recommended-product-card">
+                            <!-- Match injects here -->
+                        </div>
+                        <button class="btn btn-secondary mt-4" id="quiz-restart-btn">Yeniden Çöz <i class="fa-solid fa-rotate-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer" id="iletisim">
+            <div class="footer-container container">
+                <div class="footer-brand">
+                    <div class="footer-logo">holly <span>COFFEE</span></div>
+                    <p class="footer-tagline">Özenle kavrulmuş nitelikli kahvenin Ankara'daki seçkin adresi.</p>
+                    <div class="footer-socials">
+                        <a href="#" onclick="event.preventDefault();"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" onclick="event.preventDefault();"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" onclick="event.preventDefault();"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Gezinme</h4>
+                    <ul>
+                        <li><a href="#shop-sec">Koleksiyon</a></li>
+                        <li><a href="#quiz-sec">Coffee Finder</a></li>
+                        <li><a href="#" id="admin-footer-link"><i class="fa-solid fa-lock"></i> Yönetici Paneli</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>İletişim & Dükkan</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Bağış Sokak No:15, Çankaya/Ankara</p>
+                    <p><i class="fa-solid fa-phone"></i> +90 (312) 444 8 444</p>
+                    <p><i class="fa-solid fa-envelope"></i> hello@hollycoffee.co</p>
+                    <p><i class="fa-solid fa-clock"></i> Her Gün: 08:30 - 23:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-container container">
+                    <span>Designed with passion. All rights reserved.</span>
+                    <span>&copy; 2026 Holly Coffee Roastery.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Client Orders Log History Modal -->
+    <div class="modal-backdrop" id="customer-orders-modal" style="display: none;">
+        <div class="modal-card customer-orders-modal-card">
+            <button class="modal-close-btn" id="modal-close-btn-orders">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Geçmiş Siparişlerim</h3>
+                <p class="modal-subtitle">Daha önce vermiş olduğunuz siparişlerin durumunu inceleyin.</p>
+            </div>
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Sipariş ID</th>
+                            <th>Tarih</th>
+                            <th>Ürünler</th>
+                            <th>Toplam</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-orders-history-tbody">
+                        <!-- Dynamic rows inject here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-backdrop" style="display: none;">
+        <div class="cart-drawer">
+            <div class="cart-drawer-header">
+                <h3>Sepetiniz (<span class="cart-count-drawer">0</span>)</h3>
+                <button class="cart-drawer-close" id="cart-close-btn">&times;</button>
+            </div>
+
+            <!-- Cart Items Container -->
+            <div class="cart-drawer-body" id="cart-items-container">
+                <!-- Dynamic items inject here -->
+            </div>
+
+            <!-- Cart Drawer Footer -->
+            <div class="cart-drawer-footer">
+                <div class="cart-subtotal">
+                    <span>Ara Toplam:</span>
+                    <span id="cart-subtotal-value">₺0.00</span>
+                </div>
+                <button class="btn btn-primary w-100" id="cart-checkout-btn">Satın Al (Ödemeye Geç) <i class="fa-solid fa-credit-card"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Login / Register Modal -->
+    <div class="modal-backdrop" id="user-portal-modal" style="display: none;">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-btn-user">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title" id="user-modal-title">Giriş Yap</h3>
+                <p class="modal-subtitle">Nitelikli kahve deneyimine üye portalınızla devam edin.</p>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="customer-login-form">
+                <div class="form-group">
+                    <label for="customer-email">E-posta</label>
+                    <input type="email" id="customer-email" value="user@holly.coffee" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-password">Şifre</label>
+                    <input type="password" id="customer-password" value="user" required>
+                </div>
+                <div id="customer-login-error" class="error-text" style="display: none;">Geçersiz e-posta veya şifre!</div>
+                <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+                <p class="form-switch-text mt-3">Hesabınız yok mu? <a href="#" id="switch-to-register">Kayıt Olun</a></p>
+            </form>
+
+            <!-- Register Form (Hidden initially) -->
+            <form id="customer-register-form" style="display: none;">
+                <div class="form-group">
+                    <label for="register-name">Ad Soyad</label>
+                    <input type="text" id="register-name" placeholder="Ahmet Yılmaz" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">E-posta</label>
+                    <input type="email" id="register-email" placeholder="user@holly.coffee" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Şifre</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-phone">Telefon</label>
+                    <input type="text" id="register-phone" placeholder="0555 555 55 55" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-address">Adres</label>
+                    <textarea id="register-address" rows="2" placeholder="Adresinizi yazın..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Kayıt Ol & Giriş Yap</button>
+                <p class="form-switch-text mt-3">Zaten üye misiniz? <a href="#" id="switch-to-login">Giriş Yapın</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Checkout Multi-Step Wizard Modal -->
+    <div class="modal-backdrop" id="checkout-modal" style="display: none;">
+        <div class="modal-card checkout-modal-card">
+            <button class="modal-close-btn" id="modal-close-btn-checkout">&times;</button>
+            
+            <!-- Wizard Steps Progress Bar -->
+            <div class="checkout-steps">
+                <div class="progress-step active" id="step-dot-1">1. Adres</div>
+                <div class="progress-step" id="step-dot-2">2. Ödeme</div>
+                <div class="progress-step" id="step-dot-3">3. Sonuç</div>
+            </div>
+
+            <div class="checkout-modal-body">
+                <!-- Panel 1: Shipping Address -->
+                <div class="checkout-form-panel" id="checkout-panel-1">
+                    <h3>Teslimat Bilgileri</h3>
+                    <form id="checkout-address-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="checkout-name">Alıcı Ad Soyad</label>
+                                <input type="text" id="checkout-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-phone">Telefon Numarası</label>
+                                <input type="text" id="checkout-phone" placeholder="05XX XXX XX XX" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="checkout-address">Teslimat Adresi</label>
+                                <textarea id="checkout-address" rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <div class="checkout-actions-row">
+                            <span>Sipariş Tutarı: <strong id="checkout-total-val">₺0.00</strong></span>
+                            <button type="submit" class="btn btn-primary">Ödemeye İlerle <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Panel 2: Credit Card Payment Info -->
+                <div class="checkout-form-panel" id="checkout-panel-2" style="display: none;">
+                    <h3>Ödeme Bilgileri</h3>
+                    <form id="checkout-payment-form">
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="checkout-card-name">Kart Sahibinin Adı</label>
+                                <input type="text" id="checkout-card-name" placeholder="Kart üzerindeki isim" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="checkout-card-number">Kart Numarası</label>
+                                <input type="text" id="checkout-card-number" placeholder="4543 **** **** ****" maxlength="19" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-card-expiry">Son Kullanma (AA/YY)</label>
+                                <input type="text" id="checkout-card-expiry" placeholder="12/28" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-card-cvv">Güvenlik Kodu (CVV)</label>
+                                <input type="password" id="checkout-card-cvv" placeholder="***" maxlength="3" required>
+                            </div>
+                        </div>
+                        <div class="checkout-actions-row">
+                            <p style="font-size:11px; opacity:0.6; max-width:250px;">Ödemeniz 256-Bit SSL şifreleme altyapısıyla güvenle gerçekleştirilir.</p>
+                            <button type="submit" class="btn btn-primary">Siparişi Tamamla <i class="fa-solid fa-check"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Panel 3: Order Success Result -->
+                <div class="checkout-form-panel" id="checkout-panel-3" style="display: none; text-align: center; padding: 40px 10px;">
+                    <div class="success-icon-badge">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h2>Siparişiniz Alındı!</h2>
+                    <p style="opacity:0.8; margin-top:12px;">Sipariş Numaranız: <strong id="success-order-id">#HL-XXXXX</strong></p>
+                    <p style="font-size:14px; opacity:0.6; margin-top:8px;">Kahveniz Ankara atölyemizde özenle hazırlanıp kargoya teslim edilecektir.</p>
+                    <button class="btn btn-primary mt-4" id="checkout-success-close-btn" style="max-width:220px; margin:24px auto 0 auto;">Alışverişe Devam Et</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel Control Layout -->
+    <div id="admin-login-wrapper" class="admin-page-container" style="display: none;">
+        <div class="admin-login-card">
+            <div class="admin-login-header">
+                <h2>Yönetici Girişi</h2>
+                <p class="login-subtitle">Mağaza fiyat yönetimi ve sipariş kontrol paneli.</p>
+            </div>
+            
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-email">E-posta</label>
+                    <input type="email" id="admin-email" value="admin@holly.coffee" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Şifre</label>
+                    <input type="password" id="admin-password" value="admin" required>
+                </div>
+                <div id="admin-login-error" class="error-text" style="display: none;">Hatalı yönetici bilgisi!</div>
+                <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+            </form>
+            <button class="btn btn-secondary w-100 mt-3" id="back-to-store-btn-1"><i class="fa-solid fa-arrow-left"></i> Mağazaya Dön</button>
+        </div>
+    </div>
+
+    <!-- Admin Control Dashboard -->
+    <div id="admin-dashboard-wrapper" class="admin-dashboard-container" style="display: none;">
+        <!-- Left Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <h3>holly admin</h3>
+                <span class="badge-admin">Kontrol</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" data-tab="tab-analytics"><i class="fa-solid fa-chart-line"></i> Analitikler</li>
+                    <li data-tab="tab-orders"><i class="fa-solid fa-clipboard-list"></i> Siparişler</li>
+                    <li data-tab="tab-products"><i class="fa-solid fa-coffee-bean"></i> Ürün Yönetimi</li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn btn-secondary w-100 btn-mini" id="back-to-store-btn-2">Mağazaya Dön</button>
+                <button class="btn btn-primary w-100 btn-mini mt-2" id="admin-logout-btn">Çıkış Yap</button>
+            </div>
+        </aside>
+
+        <!-- Right Content Main Area -->
+        <main class="admin-main">
+            <!-- Analytics Tab -->
+            <section class="dashboard-tab" id="tab-analytics">
+                <div class="dashboard-header">
+                    <h2>Genel Analitik Raporu</h2>
+                    <p>Mağazanızın anlık satış ve gelir performans grafikleri.</p>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="analytics-cards-grid">
+                    <div class="analytics-card">
+                        <div class="card-icon"><i class="fa-solid fa-wallet"></i></div>
+                        <div>
+                            <div class="card-label">Toplam Gelir</div>
+                            <div class="card-value" id="stat-revenue">₺3,210.00</div>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="card-icon"><i class="fa-solid fa-box"></i></div>
+                        <div>
+                            <div class="card-label">Sipariş Sayısı</div>
+                            <div class="card-value" id="stat-orders">2</div>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="card-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+                        <div>
+                            <div class="card-label">Ortalama Sepet</div>
+                            <div class="card-value" id="stat-avg">₺1,605.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Line Graph -->
+                <div class="chart-panel">
+                    <h3>Haftalık Satış Grafiği (Simüle Edilen)</h3>
+                    <div class="svg-chart-container">
+                        <svg viewBox="0 0 700 300" width="100%" height="240" class="analytics-svg-chart">
+                            <defs>
+                                <linearGradient id="chart-grad-gold" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="var(--gold-color)" stop-opacity="0.3"></stop>
+                                    <stop offset="100%" stop-color="var(--gold-color)" stop-opacity="0"></stop>
+                                </linearGradient>
+                            </defs>
+                            <!-- Grid lines -->
+                            <line x1="50" y1="50" x2="650" y2="50" stroke="rgba(0,0,0,0.06)" stroke-width="1"></line>
+                            <line x1="50" y1="125" x2="650" y2="125" stroke="rgba(0,0,0,0.06)" stroke-width="1"></line>
+                            <line x1="50" y1="200" x2="650" y2="200" stroke="rgba(0,0,0,0.06)" stroke-width="1"></line>
+                            <line x1="50" y1="250" x2="650" y2="250" stroke="rgba(0,0,0,0.1)" stroke-width="2"></line>
+                            
+                            <!-- Graph Area & Path -->
+                            <path d="M 50,220 Q 150,150 250,190 T 450,110 T 650,80 L 650,250 L 50,250 Z" fill="url(#chart-grad-gold)"></path>
+                            <path d="M 50,220 Q 150,150 250,190 T 450,110 T 650,80" fill="none" stroke="var(--gold-color)" stroke-width="4" stroke-linecap="round"></path>
+                            
+                            <!-- Value Markers -->
+                            <circle cx="50" cy="220" r="6" fill="#fff" stroke="var(--gold-color)" stroke-width="3"></circle>
+                            <circle cx="250" cy="190" r="6" fill="#fff" stroke="var(--gold-color)" stroke-width="3"></circle>
+                            <circle cx="450" cy="110" r="6" fill="#fff" stroke="var(--gold-color)" stroke-width="3"></circle>
+                            <circle cx="650" cy="80" r="6" fill="#fff" stroke="var(--gold-color)" stroke-width="3"></circle>
+                            
+                            <!-- Axes Labels -->
+                            <text x="50" y="275" fill="rgba(0,0,0,0.4)" font-size="12" text-anchor="middle">Pzt</text>
+                            <text x="150" y="275" fill="rgba(0,0,0,0.4)" font-size="12" text-anchor="middle">Sal</text>
+                            <text x="250" y="275" fill="rgba(0,0,0,0.4)" font-size="12" text-anchor="middle">Çar</text>
+                            <text x="350" y="275" fill="rgba(0,0,0,0.4)" font-size="12" text-anchor="middle">Per</text>
+                            <text x="450" y="275" fill="rgba(0,0,0,0.4)" font-size="12" text-anchor="middle">Cum</text>
+                            <text x="550" y="275" fill="rgba(0,0,0,0.4)" font-size="12" text-anchor="middle">Cmt</text>
+                            <text x="650" y="275" fill="rgba(0,0,0,0.4)" font-size="12" text-anchor="middle">Paz</text>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Tab -->
+            <section class="dashboard-tab" id="tab-orders" style="display: none;">
+                <div class="dashboard-header">
+                    <h2>Müşteri Siparişleri</h2>
+                    <p>Simüle edilen dükkandan verilmiş siparişlerin anlık kaydı.</p>
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Sipariş ID</th>
+                                <th>Müşteri</th>
+                                <th>Adres / Tel</th>
+                                <th>Ürünler</th>
+                                <th>Toplam</th>
+                                <th>Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-orders-tbody">
+                            <!-- Dynamic Orders inject here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Products Tab -->
+            <section class="dashboard-tab" id="tab-products" style="display: none;">
+                <div class="dashboard-header">
+                    <h2>Mağaza Ürün Yönetimi</h2>
+                    <p>Fiyat güncellemeleri anında müşteri storefrontuna yansır.</p>
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Görsel</th>
+                                <th>Ürün Adı</th>
+                                <th>Kategori</th>
+                                <th>Kavrum</th>
+                                <th>Fiyat (TL)</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-products-tbody">
+                            <!-- Dynamic Products list inject here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Core Script Link -->
+    <script src="app.js"></script>
+</body>
+</html>
