@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holly Coffee Roastery - Tasarım Alternatifleri Portalı</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #faf7f2;
+            --text-color: #1e1e24;
+            --primary-blue: #b8c5e2;
+            --primary-pink: #fbcbc9;
+            --charcoal: #1e1e24;
+            --white: #ffffff;
+            --border-color: rgba(30, 30, 36, 0.12);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Abstract Background blobs */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-blue) 0%, rgba(184, 197, 226, 0.2) 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            width: 45vw;
+            height: 45vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-pink) 0%, rgba(251, 203, 201, 0.2) 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        /* Container styling */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header section */
+        header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(250, 247, 242, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .brand-title {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-title span {
+            color: #8c7355;
+            font-style: italic;
+        }
+
+        .portal-subtitle {
+            font-size: 15px;
+            opacity: 0.7;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        /* Main Section */
+        main {
+            flex-grow: 1;
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .grid-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: stretch;
+        }
+
+        /* Option Card */
+        .option-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(30, 30, 36, 0.03);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            z-index: 2;
+        }
+
+        .card-blue::before {
+            background-color: var(--primary-blue);
+        }
+
+        .card-pink::before {
+            background-color: var(--primary-pink);
+        }
+
+        .option-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(30, 30, 36, 0.08);
+            border-color: rgba(30, 30, 36, 0.25);
+        }
+
+        .option-badge {
+            align-self: flex-start;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .badge-blue {
+            background-color: rgba(184, 197, 226, 0.2);
+            color: #3b5280;
+        }
+
+        .badge-pink {
+            background-color: rgba(251, 203, 201, 0.3);
+            color: #8c4b49;
+        }
+
+        .option-title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .option-desc {
+            font-size: 15px;
+            opacity: 0.8;
+            margin-bottom: 32px;
+            min-height: 72px;
+        }
+
+        /* Feature List inside cards */
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+        }
+
+        .feature-list li {
+            font-size: 14px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-list li i {
+            color: #8c7355;
+            width: 16px;
+        }
+
+        /* Buttons */
+        .btn-go {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 28px;
+            border-radius: 14px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--white);
+            background-color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+            transition: var(--transition);
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-go:hover {
+            background-color: transparent;
+            color: var(--charcoal);
+        }
+
+        /* Features Section */
+        .portal-features {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .portal-features h4 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .features-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            font-size: 13px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-item i {
+            color: var(--charcoal);
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        .footer-address {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 991px) {
+            .grid-options {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            main {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-area">
+                <img src="kahve-firmasi-demo/logo.png" alt="Holly Mascot" class="logo-img">
+                <h1 class="brand-title">holly <span>COFFEE</span></h1>
+            </div>
+            <p class="portal-subtitle">Değerli Holly Coffee Roastery Ekibi, markanız için hazırladığımız iki farklı kullanıcı deneyimi ve arayüz tasarım seçeneğini aşağıdan inceleyebilirsiniz.</p>
+        </div>
+    </header>
+
+    <!-- Selection Grid -->
+    <main>
+        <div class="container">
+            <div class="grid-options">
+                
+                <!-- Option 1 Card -->
+                <div class="option-card card-blue">
+                    <div>
+                        <span class="option-badge badge-blue">Seçenek 1</span>
+                        <h2 class="option-title">Playful Neobrutalism</h2>
+                        <p class="option-desc">Kalın dış çizgiler, düz dolgulu gölgeler ve canlı hatlarla tasarlanmış eğlenceli ve dinamik kullanıcı deneyimi. Genç ve enerjik kitleler için mükemmeldir.</p>
+                        
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-square-check"></i> Kalın gölgeli buton ve kart tasarımları</li>
+                            <li><i class="fa-solid fa-square-check"></i> Canlı ve dinamik kategori filtresi</li>
+                            <li><i class="fa-solid fa-square-check"></i> Neobrutalist kahve bulucu anketi</li>
+                            <li><i class="fa-solid fa-square-check"></i> Müşteri sipariş logs & sipariş takip arayüzü</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="kahve-firmasi-demo/index.html" class="btn-go">
+                        1. Seçeneği İncele <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Option 2 Card -->
+                <div class="option-card card-pink">
+                    <div>
+                        <span class="option-badge badge-pink">Seçenek 2</span>
+                        <h2 class="option-title">Minimalist Editorial</h2>
+                        <p class="option-desc">İnce 1px çizgiler, frosted glass (buzlu cam) menüler, zarif serif tipografi ve akıcı mikro animasyonlar içeren premium butik kahve deneyimi.</p>
+                        
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-square-check"></i> İnce çizgili ve modern şeffaf kart düzeni</li>
+                            <li><i class="fa-solid fa-square-check"></i> Buzlu cam detaylı sepet çekmecesi</li>
+                            <li><i class="fa-solid fa-square-check"></i> Zarif ve lüks tasarımlı kahve bulucu rehberi</li>
+                            <li><i class="fa-solid fa-square-check"></i> Entegre Slate Blue / Pastel Pink dinamik temalar</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="kahve-firmasi-demo-alt/index.html" class="btn-go">
+                        2. Seçeneği İncele <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Portal Features list -->
+            <div class="portal-features">
+                <h4>Ortak Teknolojiler & Entegrasyonlar</h4>
+                <div class="features-row">
+                    <span class="feature-item"><i class="fa-solid fa-database"></i> LocalStorage Veri Paylaşımı</span>
+                    <span class="feature-item"><i class="fa-solid fa-user-gear"></i> Canlı Yönetici Paneli</span>
+                    <span class="feature-item"><i class="fa-solid fa-cart-shopping"></i> Dinamik Alışveriş Sepeti</span>
+                    <span class="feature-item"><i class="fa-solid fa-compass"></i> Kahve Anketi Öneri Motoru</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-address">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Bağış Sokak No:15, Çankaya/Ankara</span>
+            </div>
+            <p>&copy; 2026 Holly Coffee Roastery. Tasarım Alternatifleri Sunum Portalı.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
