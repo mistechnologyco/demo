@@ -1227,6 +1227,29 @@ body.checkout-open .checkout-modal-overlay {
         font-size: 20px;
     }
     
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    .cart-drawer {
+        width: 100%;
+    }
+    
+    .checkout-modal, .admin-login-card, .modal-card {
+        width: 95%;
+        margin: 20px auto;
+        box-shadow: 6px 6px 0px var(--charcoal) !important;
+    }
+    
+    .checkout-modal-body, .user-modal-body {
+        padding: 20px;
+    }
+    
     .footer-container {
         grid-template-columns: 1fr;
     }
@@ -1244,8 +1267,8 @@ body.checkout-open .checkout-modal-overlay {
     }
     
     .checkout-step-indicator {
-        font-size: 12px;
-        padding: 12px 6px;
+        font-size: 11px;
+        padding: 10px 4px;
     }
 }
 

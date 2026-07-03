@@ -1612,6 +1612,8 @@ body.theme-dark .btn-secondary:hover {
     }
     
     .modal-card {
+        width: 95%;
+        margin: 20px auto;
         padding: 24px;
     }
 }
