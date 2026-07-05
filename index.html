@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holly Coffee Roastery - Tasarım Alternatifleri Portalı</title>
+    <title>Holly Coffee Roastery - Tasarım Portalı</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #faf7f2;
-            --text-color: #1e1e24;
+            --bg-color: #faf6f0;
+            --text-color: #2a1c0f;
             --primary-blue: #b8c5e2;
             --primary-pink: #fbcbc9;
-            --charcoal: #1e1e24;
+            --charcoal: #2a1c0f;
             --white: #ffffff;
-            --border-color: rgba(30, 30, 36, 0.12);
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Outfit', sans-serif;
+            --border-color: rgba(42, 28, 15, 0.08);
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Jost', sans-serif;
+            --gold: #b8925a;
         }
 
         * {
@@ -44,18 +45,18 @@
             overflow-x: hidden;
         }
 
-        /* Abstract Background blobs */
+        /* Abstract Soft Blobs */
         body::before {
             content: '';
             position: absolute;
-            top: -20%;
+            top: -10%;
             left: -10%;
-            width: 50vw;
-            height: 50vw;
+            width: 60vw;
+            height: 60vw;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--primary-blue) 0%, rgba(184, 197, 226, 0.2) 70%);
+            background: radial-gradient(circle, rgba(184, 197, 226, 0.25) 0%, transparent 70%);
             z-index: -1;
-            filter: blur(80px);
+            filter: blur(100px);
         }
 
         body::after {
@@ -63,29 +64,28 @@
             position: absolute;
             bottom: -10%;
             right: -10%;
-            width: 45vw;
-            height: 45vw;
+            width: 50vw;
+            height: 50vw;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--primary-pink) 0%, rgba(251, 203, 201, 0.2) 70%);
+            background: radial-gradient(circle, rgba(251, 203, 201, 0.35) 0%, transparent 70%);
             z-index: -1;
-            filter: blur(80px);
+            filter: blur(100px);
         }
 
-        /* Container styling */
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
-        /* Header section */
+        /* Header */
         header {
-            padding: 40px 0;
+            padding: 50px 0 30px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
-            background-color: rgba(250, 247, 242, 0.8);
-            backdrop-filter: blur(10px);
+            background-color: rgba(250, 246, 240, 0.6);
+            backdrop-filter: blur(20px);
             z-index: 10;
         }
 
@@ -93,190 +93,124 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;
-            margin-bottom: 12px;
+            gap: 14px;
+            margin-bottom: 16px;
         }
 
         .logo-img {
-            height: 60px;
+            height: 48px;
             width: auto;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
         }
 
         .brand-title {
             font-family: var(--font-heading);
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-size: 38px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--charcoal);
         }
 
         .brand-title span {
-            color: #8c7355;
+            color: var(--gold);
+            font-weight: 300;
             font-style: italic;
         }
 
         .portal-subtitle {
             font-size: 15px;
-            opacity: 0.7;
-            max-width: 600px;
+            color: #6e5e50;
+            max-width: 680px;
             margin: 0 auto;
-            font-weight: 500;
+            font-weight: 400;
+            line-height: 1.8;
         }
 
-        /* Main Section */
+        /* Main Grid */
         main {
             flex-grow: 1;
-            padding: 80px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 60px 0 90px;
         }
 
         .grid-options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 32px;
-            align-items: stretch;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
             width: 100%;
         }
 
         /* Option Card */
         .option-card {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 48px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(42, 28, 15, 0.06);
+            border-radius: 16px;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 10px 30px rgba(30, 30, 36, 0.03);
+            box-shadow: 0 10px 30px rgba(42, 28, 15, 0.02);
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .option-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            z-index: 2;
-        }
-
-        .card-blue::before {
-            background-color: var(--primary-blue);
-        }
-
-        .card-pink::before {
-            background-color: var(--primary-pink);
+            backdrop-filter: blur(10px);
         }
 
         .option-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(30, 30, 36, 0.08);
-            border-color: rgba(30, 30, 36, 0.25);
+            transform: translateY(-6px);
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 20px 40px rgba(42, 28, 15, 0.08);
+            border-color: rgba(42, 28, 15, 0.15);
         }
 
         .option-badge {
             align-self: flex-start;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 30px;
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 10px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 24px;
         }
 
-        .badge-blue {
-            background-color: rgba(184, 197, 226, 0.2);
-            color: #3b5280;
-        }
-
-        .badge-pink {
-            background-color: rgba(251, 203, 201, 0.3);
-            color: #8c4b49;
-        }
-
-        .card-dark-gold {
-            background-color: #0f1015 !important;
-            border-color: rgba(197, 168, 128, 0.15) !important;
-            color: #f5f6f8;
-        }
-        .card-dark-gold::before {
-            background-color: #c5a880;
-        }
-        .card-dark-gold .option-desc {
-            color: #9fa2b2;
-        }
-        .card-dark-gold .feature-list li {
-            color: #9fa2b2;
-        }
-        .badge-dark-gold {
-            background-color: rgba(197, 168, 128, 0.15);
-            color: #c5a880;
-            border: 1px solid rgba(197, 168, 128, 0.3);
-        }
-        
-        .card-kyoto {
-            background-color: #fcfbfa !important;
-            border: 2px solid #1a1a1a !important;
-            box-shadow: 4px 4px 0px #1a1a1a;
-            border-radius: 8px !important;
-        }
-        .card-kyoto::before {
-            background-color: #e76f51;
-            height: 6px;
-        }
-        .badge-kyoto {
-            background-color: rgba(231, 111, 81, 0.1);
-            color: #e76f51;
-            border: 1px solid #1a1a1a;
-            border-radius: 4px;
-        }
+        .badge-blue { background-color: #e2e8f5; color: #3b5280; }
+        .badge-pink { background-color: #fce3e2; color: #8c4b49; }
+        .badge-dark-gold { background-color: #ebdcb9; color: #856a34; }
+        .badge-kyoto { background-color: #ebdcd6; color: #b0503a; }
 
         .option-title {
             font-family: var(--font-heading);
             font-size: 28px;
             font-weight: 600;
-            margin-bottom: 16px;
+            color: var(--charcoal);
+            margin-bottom: 12px;
         }
 
         .option-desc {
-            font-size: 15px;
-            opacity: 0.8;
-            margin-bottom: 32px;
-            min-height: 72px;
+            font-size: 14px;
+            color: #6e5e50;
+            margin-bottom: 30px;
+            min-height: 66px;
+            line-height: 1.7;
         }
 
-        /* Feature List inside cards */
         .feature-list {
             list-style: none;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             border-top: 1px solid var(--border-color);
             padding-top: 24px;
         }
 
         .feature-list li {
-            font-size: 14px;
+            font-size: 13.5px;
+            color: #5c4d40;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .feature-list li i {
-            color: #8c7355;
-            width: 16px;
+            color: var(--gold);
+            font-size: 12px;
         }
 
         /* Buttons */
@@ -285,10 +219,10 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 16px 28px;
-            border-radius: 14px;
+            padding: 14px 24px;
+            border-radius: 8px;
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             text-decoration: none;
             color: var(--white);
@@ -296,56 +230,61 @@
             border: 1px solid var(--charcoal);
             transition: var(--transition);
             cursor: pointer;
-            width: 100%;
+            letter-spacing: 0.5px;
         }
 
         .btn-go:hover {
             background-color: transparent;
             color: var(--charcoal);
+            transform: translateY(-2px);
         }
 
-        /* Features Section */
+        /* Bottom Tech Row */
         .portal-features {
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.4);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px;
-            margin-top: 60px;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 48px;
             text-align: center;
+            backdrop-filter: blur(8px);
         }
 
         .portal-features h4 {
             font-family: var(--font-heading);
-            font-size: 18px;
-            margin-bottom: 16px;
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 14px;
         }
 
         .features-row {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 32px;
             flex-wrap: wrap;
         }
 
         .feature-item {
             font-size: 13px;
-            opacity: 0.8;
+            color: #6e5e50;
             display: flex;
             align-items: center;
             gap: 8px;
+            font-weight: 500;
         }
 
         .feature-item i {
-            color: var(--charcoal);
+            color: var(--gold);
         }
 
-        /* Footer Section */
+        /* Footer */
         footer {
             padding: 40px 0;
             border-top: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.2);
             text-align: center;
             font-size: 13px;
-            opacity: 0.6;
+            color: #8c7d70;
         }
 
         .footer-address {
@@ -356,26 +295,15 @@
             gap: 8px;
         }
 
-        /* Responsive Breakpoints */
         @media (max-width: 991px) {
             .grid-options {
                 grid-template-columns: 1fr;
-                gap: 32px;
             }
             main {
-                padding: 60px 0;
+                padding: 40px 0 60px;
             }
             .option-card {
-                padding: 32px 24px;
-            }
-            .brand-title {
-                font-size: 26px;
-            }
-            .option-title {
-                font-size: 24px;
-            }
-            .features-row {
-                gap: 20px;
+                padding: 30px;
             }
         }
     </style>
@@ -389,7 +317,7 @@
                 <img src="kahve-firmasi-demo/logo.png" alt="Holly Mascot" class="logo-img">
                 <h1 class="brand-title">holly <span>COFFEE</span></h1>
             </div>
-            <p class="portal-subtitle">Değerli Holly Coffee Roastery Ekibi, markanız için hazırladığımız iki farklı kullanıcı deneyimi ve arayüz tasarım seçeneğini aşağıdan inceleyebilirsiniz.</p>
+            <p class="portal-subtitle">Kullanıcı deneyimi ve arayüz alternatiflerimiz. Markanıza en uygun stili seçip canlı sunuma başlayabilirsiniz.</p>
         </div>
     </header>
 
@@ -399,17 +327,16 @@
             <div class="grid-options">
                 
                 <!-- Option 1 Card -->
-                <div class="option-card card-blue">
+                <div class="option-card">
                     <div>
                         <span class="option-badge badge-blue">Seçenek 1</span>
                         <h2 class="option-title">Playful Neobrutalism</h2>
-                        <p class="option-desc">Kalın dış çizgiler, düz dolgulu gölgeler ve canlı hatlarla tasarlanmış eğlenceli ve dinamik kullanıcı deneyimi. Genç ve enerjik kitleler için mükemmeldir.</p>
+                        <p class="option-desc">Kalın dış çizgiler, düz dolgulu gölgeler ve canlı hatlarla tasarlanmış eğlenceli ve dinamik kullanıcı deneyimi.</p>
                         
                         <ul class="feature-list">
-                            <li><i class="fa-solid fa-square-check"></i> Kalın gölgeli buton ve kart tasarımları</li>
-                            <li><i class="fa-solid fa-square-check"></i> Canlı ve dinamik kategori filtresi</li>
-                            <li><i class="fa-solid fa-square-check"></i> Neobrutalist kahve bulucu anketi</li>
-                            <li><i class="fa-solid fa-square-check"></i> Müşteri sipariş logs & sipariş takip arayüzü</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Kalın gölgeli buton ve kart tasarımları</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Canlı ve dinamik kategori filtresi</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Neobrutalist kahve bulucu anketi</li>
                         </ul>
                     </div>
                     
@@ -419,17 +346,16 @@
                 </div>
 
                 <!-- Option 2 Card -->
-                <div class="option-card card-pink">
+                <div class="option-card">
                     <div>
                         <span class="option-badge badge-pink">Seçenek 2</span>
                         <h2 class="option-title">Minimalist Editorial</h2>
-                        <p class="option-desc">İnce 1px çizgiler, frosted glass (buzlu cam) menüler, zarif serif tipografi ve akıcı mikro animasyonlar içeren premium butik kahve deneyimi.</p>
+                        <p class="option-desc">İnce 1px çizgiler, şık bej/pembe temalar, zarif tipografi ve akıcı mikro animasyonlar içeren premium butik kahve deneyimi.</p>
                         
                         <ul class="feature-list">
-                            <li><i class="fa-solid fa-square-check"></i> İnce çizgili ve modern şeffaf kart düzeni</li>
-                            <li><i class="fa-solid fa-square-check"></i> Buzlu cam detaylı sepet çekmecesi</li>
-                            <li><i class="fa-solid fa-square-check"></i> Zarif ve lüks tasarımlı kahve bulucu rehberi</li>
-                            <li><i class="fa-solid fa-square-check"></i> Entegre Slate Blue / Pastel Pink dinamik temalar</li>
+                            <li><i class="fa-solid fa-circle-check"></i> İnce çizgili ve modern şeffaf kart düzeni</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Buzlu cam detaylı sepet çekmecesi</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Zarif ve lüks tasarımlı kahve bulucu rehberi</li>
                         </ul>
                     </div>
                     
@@ -439,17 +365,16 @@
                 </div>
 
                 <!-- Option 3 Card -->
-                <div class="option-card card-dark-gold">
+                <div class="option-card">
                     <div>
                         <span class="option-badge badge-dark-gold">Seçenek 3</span>
-                        <h2 class="option-title">Luxury Glassmorphism</h2>
-                        <p class="option-desc">Gece yarısı lüks bar konseptli siyah fon, parıldayan neon kenarlıklar ve ultra premium animasyonlarla süslenmiş görkemli gurme deneyimi.</p>
+                        <h2 class="option-title">Grand Reserve</h2>
+                        <p class="option-desc">Serif yazı karakteri, lüks bej, pastel pembe ve mavi vurgular ile donatılmış, tam kapsamlı e-ticaret özelliklerine sahip en gelişmiş sürüm.</p>
                         
                         <ul class="feature-list">
-                            <li><i class="fa-solid fa-square-check"></i> Karanlık mesh arka plan ve şık detaylar</li>
-                            <li><i class="fa-solid fa-square-check"></i> Hover'da parlayan cam kart etkileşimleri</li>
-                            <li><i class="fa-solid fa-square-check"></i> Mavi ve Pembe arası dinamik geçişli temalar</li>
-                            <li><i class="fa-solid fa-square-check"></i> Üst düzey Montserrat & Playfair Display fontu</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Tam fonksiyonel sepet &amp; ödeme sistemi</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Detaylı ürün popupları &amp; yorumlar</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Gelişmiş admin &amp; analiz paneli</li>
                         </ul>
                     </div>
                     
@@ -459,17 +384,16 @@
                 </div>
 
                 <!-- Option 4 Card -->
-                <div class="option-card card-kyoto">
+                <div class="option-card">
                     <div>
                         <span class="option-badge badge-kyoto">Seçenek 4</span>
                         <h2 class="option-title">Kyoto Bauhaus</h2>
-                        <p class="option-desc">Terracotta & Sage toprak tonları, kalın siyah çerçeveler ve sürekli dönen logo amblemleri içeren retro-asimetrik Japon tasarım dili.</p>
+                        <p class="option-desc">Terracotta &amp; Sage toprak tonları, kalın siyah çerçeveler ve retro-asimetrik Japon tasarım dili.</p>
                         
                         <ul class="feature-list">
-                            <li><i class="fa-solid fa-square-check"></i> Terracotta ve Adaçayı Yeşili retro teması</li>
-                            <li><i class="fa-solid fa-square-check"></i> Sürekli dönen dairesel maskot mühürleri</li>
-                            <li><i class="fa-solid fa-square-check"></i> Bauhaus asimetrisi ve kalın dış konturlar</li>
-                            <li><i class="fa-solid fa-square-check"></i> Syne bold yazı tipi ile güçlü tipografi</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Terracotta ve Adaçayı Yeşili retro teması</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Bauhaus asimetrisi ve kalın dış konturlar</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Syne bold yazı tipi ile güçlü tipografi</li>
                         </ul>
                     </div>
                     
@@ -482,9 +406,8 @@
 
             <!-- Portal Features list -->
             <div class="portal-features">
-                <h4>Ortak Teknolojiler & Entegrasyonlar</h4>
+                <h4>Ortak Sistem Entegrasyonları</h4>
                 <div class="features-row">
-                    <span class="feature-item"><i class="fa-solid fa-database"></i> LocalStorage Veri Paylaşımı</span>
                     <span class="feature-item"><i class="fa-solid fa-user-gear"></i> Canlı Yönetici Paneli</span>
                     <span class="feature-item"><i class="fa-solid fa-cart-shopping"></i> Dinamik Alışveriş Sepeti</span>
                     <span class="feature-item"><i class="fa-solid fa-compass"></i> Kahve Anketi Öneri Motoru</span>
@@ -498,9 +421,9 @@
         <div class="container">
             <div class="footer-address">
                 <i class="fa-solid fa-location-dot"></i>
-                <span>Bağış Sokak No:15, Çankaya/Ankara</span>
+                <span>Bağış Sokak No:15, Çankaya / Ankara</span>
             </div>
-            <p>&copy; 2026 Holly Coffee Roastery. Tasarım Alternatifleri Sunum Portalı.</p>
+            <p>&copy; 2026 Holly Coffee Roastery. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
