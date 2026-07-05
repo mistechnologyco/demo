@@ -8,6 +8,11 @@
     scroll-behavior: smooth;
 }
 
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 /* --- Theme Variables --- */
 :root {
     --font-heading: 'Playfair Display', serif;
@@ -1616,4 +1621,69 @@ body.theme-dark .btn-secondary:hover {
         margin: 20px auto;
         padding: 24px;
     }
+    }
 }
+
+/* --- COMPREHENSIVE MOBILE RESPONSIVENESS FIXES --- */
+@media (max-width: 992px) {
+    .product-grid, .products-grid, .fg-grid, .story-grid, .ft-inner, .adm-stats, .category-filters, .quiz-opts-2, .quiz-opts-3, .hero-content, .split-section, .features-grid, .category-layout, .checkout-grid, .admin-stats {
+        grid-template-columns: 1fr !important;
+    }
+    h1 { font-size: 3rem !important; }
+    h2 { font-size: 2.2rem !important; }
+}
+
+@media (max-width: 768px) {
+    /* Hamburger Menu Logic */
+    .nav-menu, .main-nav { display: none !important; }
+    body.mobile-menu-active .nav-menu, body.mobile-menu-active .main-nav {
+        display: flex !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color, var(--soft-cream, var(--ivory, #fdfbf7)));
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 1000;
+        border-bottom: 2px solid var(--text-color, #1e1e24);
+    }
+    body.mobile-menu-active .nav-menu ul, body.mobile-menu-active .main-nav ul {
+        flex-direction: column !important;
+        gap: 15px !important;
+        align-items: flex-start !important;
+    }
+    .mobile-menu-btn { display: block !important; }
+    
+    .header-container { position: relative; }
+    section { padding-top: 40px !important; padding-bottom: 40px !important; }
+    
+    /* Typography */
+    h1 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+    h2 { font-size: 1.8rem !important; line-height: 1.3 !important; }
+    .hero-slogan { font-size: 1.1rem !important; }
+    
+    /* Modals */
+    .checkout-modal, .admin-login-card, .modal-card, .cart-drawer {
+        max-height: 85vh !important;
+        overflow-y: auto !important;
+        width: 95% !important;
+        margin: 5vh auto !important;
+    }
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons .btn { width: 100%; text-align: center; }
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-color, var(--text-dark, var(--charcoal, #1e1e24)));
+    margin-right: 15px;
+    padding: 5px;
+}
+
+

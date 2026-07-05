@@ -32,6 +32,11 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -304,6 +309,12 @@
             }
             .option-card {
                 padding: 30px;
+            }
+        }
+        @media (max-width: 576px) {
+            header p {
+                font-size: 15px;
+                padding: 0 10px;
             }
         }
     </style>
