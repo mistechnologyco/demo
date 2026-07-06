@@ -4,33 +4,33 @@
     --font-heading: 'Syne', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     
-    --bg-color: #f4f1ea;
-    --card-bg: #fdfcf9;
-    --text-color: #1a1a1a;
-    --text-muted: #606060;
-    --charcoal: #1a1a1a;
+    --bg-color: #b8c5e2;
+    --card-bg: #ffffff;
+    --text-color: #1e1e24;
+    --text-muted: #5e5e6a;
+    --charcoal: #1e1e24;
     --white: #ffffff;
     
-    --accent-color: #e76f51; /* Terracotta */
-    --accent-hover: #f4a261;
-    --success-color: #2a9d8f;
+    --accent-color: #1e1e24; /* Charcoal */
+    --accent-hover: #3a3a42;
+    --success-color: #52b788;
     --error-color: #e63946;
     
-    --border-color: #1a1a1a;
+    --border-color: #1e1e24;
     --border-width: 2px;
     --border-radius: 4px; /* Bauhaus solid sharp edges */
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     
     /* Box Shadows */
-    --card-shadow: 6px 6px 0px #1a1a1a;
-    --card-shadow-hover: 10px 10px 0px #1a1a1a;
+    --card-shadow: 6px 6px 0px #1e1e24;
+    --card-shadow-hover: 10px 10px 0px #1e1e24;
 }
 
 /* Kyoto Theme Overrides */
 body.theme-kyoto-sage {
-    --accent-color: #4f772d; /* Sage Green */
-    --accent-hover: #90a955;
-    --bg-color: #ecf3e8;
+    --accent-color: #1e1e24; /* Charcoal */
+    --accent-hover: #3a3a42;
+    --bg-color: #fbcbc9;
 }
 
 * {
@@ -79,7 +79,7 @@ body {
     transition: var(--transition);
     gap: 8px;
     border: var(--border-width) solid var(--border-color);
-    box-shadow: 4px 4px 0px #1a1a1a;
+    box-shadow: 4px 4px 0px #1e1e24;
 }
 
 .btn-primary {
@@ -89,12 +89,12 @@ body {
 
 .btn-primary:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 7px 7px 0px #1a1a1a;
+    box-shadow: 7px 7px 0px #1e1e24;
 }
 
 .btn-primary:active {
     transform: translate(2px, 2px);
-    box-shadow: 0px 0px 0px #1a1a1a;
+    box-shadow: 0px 0px 0px #1e1e24;
 }
 
 .btn-secondary {
@@ -104,12 +104,12 @@ body {
 
 .btn-secondary:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 7px 7px 0px #1a1a1a;
+    box-shadow: 7px 7px 0px #1e1e24;
 }
 
 .btn-secondary:active {
     transform: translate(2px, 2px);
-    box-shadow: 0px 0px 0px #1a1a1a;
+    box-shadow: 0px 0px 0px #1e1e24;
 }
 
 .w-100 { width: 100%; }
@@ -202,7 +202,7 @@ body {
     background-color: var(--accent-color);
     color: var(--white);
     transform: translate(-2px, -2px);
-    box-shadow: 2px 2px 0px #1a1a1a;
+    box-shadow: 2px 2px 0px #1e1e24;
 }
 
 #user-display-name {
@@ -482,7 +482,7 @@ body {
 
 .product-image-container {
     height: 200px;
-    background: #fdfdfd;
+    background: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -596,7 +596,7 @@ body {
     background-color: var(--accent-color);
     color: var(--white);
     transform: translate(-2px, -2px);
-    box-shadow: 2px 2px 0px #1a1a1a;
+    box-shadow: 2px 2px 0px #1e1e24;
 }
 
 /* Coffee Finder Quiz Section */
@@ -680,7 +680,7 @@ body {
     background-color: var(--accent-color);
     color: var(--white);
     transform: translate(-3px, -3px);
-    box-shadow: 4px 4px 0px #1a1a1a;
+    box-shadow: 4px 4px 0px #1e1e24;
 }
 
 .quiz-opt-btn i {
@@ -965,7 +965,7 @@ body {
 
 .form-group input:focus, .form-group textarea:focus {
     background-color: #fff;
-    box-shadow: 2px 2px 0px #1a1a1a;
+    box-shadow: 2px 2px 0px #1e1e24;
 }
 
 .error-text {
